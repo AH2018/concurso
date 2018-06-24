@@ -34,12 +34,34 @@ function cargar_info_personal(){
             $('#name').html(data.profile.name);
             $("#score").html(data.profile.score);
 
+            var colors = ["","#04B431", "#0080FF","#8A0886","#AEB404","#DF7401"];
             var participation_global = document.getElementById('participation');
-            for(var i = 0; i < data.events.length; i++){
+            var color = 1;
+            for(var i = 0; i < data.events.length; i++) {
                 var participation = document.createElement("div");
+                participation.className = "col";
+                participation.className += "col-sm-2";
+                //participation.className += "color" + color;
+                participation.setAttribute('style', 'background-color: #005cbf');
+                if (color = 5) {
+                    var colorName = 'color: '+colors[color];
+                    color = 1;
+                } else {
+                    colorName = 'color: '+colors[color];
+                    color += 1;
+                }
+                var group = document.createElement("h3");
+                group.appendChild(document.createTextNode("*"));
+                group.setAttribute('style', colorName);
+                participation.appendChild(group);
+
+                var p = document.createElement("p");
                 var text = document.createTextNode(data.events[i].name);
-                participation.appendChild(text);
+                p.appendChild(text);
+                p.setAttribute('style', 'color: #ffffff');
+                participation.appendChild(p);
                 participation_global.appendChild(participation);
+
             }
         }
     );
