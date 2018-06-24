@@ -83,20 +83,16 @@
 
     <!-- #intro -->
 
-    <main class="main" id="main">
-        <div class="card cardTemplate weather-forecast" hidden> <!-- TODO renombrar o quitar -->
-            <div class="event-key" hidden></div> <!-- TODO Va la llave de la causa -->
-            <div class="card-last-updated" hidden></div> <!-- TODO¿Cuál es su uso? -->
-            <div class="location"></div>
+    <main class="main" hidden>
+        <div class="card cardTemplate">
+            <div class="event-key"></div>
             <div class="event"></div>
-            <div class="description"></div>
-            <div class="participants"></div>
-            <div class="activities" id="activities" hidden></div>
             <input type="button" id="seeDetails" class="circle-button seeDetails" value="+">
         </div>
-
     </main>
+    <div id="fill" style="overflow-y: scroll">
 
+    </div>
     <div class="dialog-container">
         <div class="dialog">
             <div class="dialog-title" style="background-color: #000000; "><p style="color: #ffffff"> Sugerir una causa</p></div>

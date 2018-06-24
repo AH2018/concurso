@@ -6,7 +6,7 @@
     <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Todo Cambiar el título del sistema -->
-    <title>Sistema de apoyo a Activistas</title>
+    <title>4aCause</title>
     <link rel="stylesheet" type="text/css" href="../styles/inline.css">
 
     <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -43,7 +43,7 @@
                 template
          +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 </head>
-<body>
+<body onload="cargar_evento_detalle()">
 
 <!--==========================
   Header
@@ -77,29 +77,20 @@
             </ul>
         </nav><!-- #nav-menu-container -->
     </div>
-</header><!-- #header -->
-<!--header class="header">
-    <!-- Todo Cambiar el título del sistema -->
-<!--h1 class="header__title">Sistema de Apoyo a Activistas</h1>
-<button id="butRefresh" class="headerButton" aria-label="Refresh"></button>
-<button id="butAdd" class="headerButton" aria-label="Add"></button>
-</header-->
-
-<!--==========================
-Intro Section
-============================-->
-<!--a href="#portfolio" class="btn-projects scrollto headerButton" id="butAdd">Sugerir causa</a>
-<!-- #intro -->
+</header>
 
 <main class="main">
     <div id="details">
-        <label id="title">Nombre del eventooooo</label>
-        <label> Datos: </label>
-        <div id="description">DEeeeeeeeeeescription</div>
-        <label>Organizaciones apoyando</label>
-        <label>Numero de participantes</label>
-        <label>Pronunciamientos</label>
-        <label> Actividades</label>
+        <b><label>Causa: </label></b>
+        <label id="title"></label>
+        <b><label>Numero de participantes: </label></b>
+        <div id="participant_number"></div>
+        <b><label>Organizaciones apoyando</label></b>
+        <label id="oganizations"></label>
+        <b><label> Actividades</label></b>
+        <div id="activities"></div>
+        <b><label>Descripción: </label></b>
+        <div id="description"></div>
     </div>
 
     <a class="btn-projects scrollto headerButton" id="butJoin">Unirse</a>
