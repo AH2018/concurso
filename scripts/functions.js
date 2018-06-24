@@ -24,6 +24,31 @@ $(document).ready(function () {
 
 });
 
+function cargar_evento_detalle() {
+    var index = window.location.href.lastIndexOf('event_id') + 9;
+    var event_id = Number(window.location.href.substring(index, window.location.href.length));
+    var settings = {
+        url: "https://tqfmpfc0p8.execute-api.us-east-1.amazonaws.com/prod/uyh",
+        type: "POST",
+        dataType: "json",
+        data: JSON.stringify({method: "events", event_id: event_id}),
+        success: function (data) {
+            $("#title").text(data.title);
+            $("#description").html(data.description);
+            $("#participant_number").text(data.participant_number);
+            $("#oganizations").text(data.oganizations)
+            for (var x = 0; x < data.activities.length; x++) {
+                $("#activities").append("<p>" + data.activities[x].order + ") " + data.activities[x].title + "</p>");
+            }
+        },
+        error: function (data) {
+            console.log(data);
+        }
+    };
+    $.ajax(settings).done();
+    var spinner = document.querySelector('.loader');
+    $(".loader").hide();
+}
 
 function cargar_info_personal() {
   var settings = {
