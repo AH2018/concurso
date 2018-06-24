@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Todo Cambiar el título del sistema -->
+    <title>Sistema de apoyo a Activistas</title>
+    <link rel="stylesheet" type="text/css" href="../styles/inline.css">
+
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                template
+         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!-- Favicons -->
+    <link href="../template/img/favicon.png" rel="icon">
+    <link href="../template/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="../template/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="../template/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../template/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../template/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="../template/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../template/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="../template/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="../template/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+      Theme Name: Reveal
+      Theme URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
+      Author: BootstrapMade.com
+      License: https://bootstrapmade.com/license/
+    ======================================================= -->
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                template
+         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+</head>
+<body>
+
+<!--==========================
+  Header
+============================-->
+<header id="header">
+    <div class="container">
+
+        <div id="logo" class="pull-left">
+            <h1 style="color: #ffffff">4aCause</h1>
+            <!--h3><a href="#body" class="scrollto">__INTERNATIONAL ACTIVISM__</a></h3>
+            <h1><a href="#body" class="scrollto">4 A CAUSE</a></h1>
+            <!-- <a href="#body"><img src="../template/img/logo.png" alt="" title="" /></a>-->
+        </div>
+
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <li class="menu-active"><a class="profile">Profile</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#team">Team</a></li>
+                <li class="menu-has-children"><a href="">Drop Down</a>
+                    <ul>
+                        <li><a href="#">Drop Down 1</a></li>
+                        <li><a href="#">Drop Down 3</a></li>
+                        <li><a href="#">Drop Down 4</a></li>
+                        <li><a href="#">Drop Down 5</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+<!--header class="header">
+    <!-- Todo Cambiar el título del sistema -->
+<!--h1 class="header__title">Sistema de Apoyo a Activistas</h1>
+<button id="butRefresh" class="headerButton" aria-label="Refresh"></button>
+<button id="butAdd" class="headerButton" aria-label="Add"></button>
+</header-->
+
+<!--==========================
+Intro Section
+============================-->
+<!--a href="#portfolio" class="btn-projects scrollto headerButton" id="butAdd">Sugerir causa</a>
+<!-- #intro -->
+
+<main class="main">
+    <div id="details">
+        <h1>Zona de evidencias</h1>
+
+        <div style="width: 90%;horiz-align: center">
+            <div class="custom-file">
+                &nbsp;&nbsp;&nbsp;<input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+            </div>
+        </div>
+
+        <h3>Tus evidencias</h3>
+        <!--div>
+            <img src="..." alt="..." class="img-thumbnail">
+            <img src="..." alt="..." class="img-thumbnail">
+            <img src="..." alt="..." class="img-thumbnail">
+            <img src="..." alt="..." class="img-thumbnail">
+        </div-->
+
+    </div>
+
+    <!--div class="card cardTemplate weather-forecast" hidden> <!-- TODO renombrar o quitar ->
+        <div class="event-key" hidden></div> <!-- TODO Va la llave de la causa ->
+        <div class="card-last-updated" hidden></div> <!-- TODO¿Cuál es su uso? ->
+        <div class="location"></div>
+        <div class="event"></div>
+        <div class="description"></div>
+        <div class="participants"></div>
+        <div class="activities" id="activities" hidden></div>
+        <input type="button" class="circle-button" value="+">
+    </div-->
+
+</main>
+
+<div class="dialog-container">
+    <div class="dialog">
+        <div class="dialog-title">Sugerir un evento</div>
+        <div class="dialog-body">
+            <label>Título de la causa</label>
+            <input type="text" id="title_event">
+            <label>Descripción</label>
+            <input type="text" id="description_event">
+
+            <!--select id="selectCityToAdd">
+                <!-- Values map to Yahoo Weather API Where On Earth Identifiers (WOEIDs).
+                     https://developer.yahoo.com/weather/documentation.html#req -->
+            <!--option value="2357536">Austin, TX</option>
+            <option value="2367105">Boston, MA</option>
+            <option value="2379574">Chicago, IL</option>
+            <option value="2459115">New York, NY</option>
+            <option value="2475687">Portland, OR</option>
+            <option value="2487956">San Francisco, CA</option>
+            <option value="2490383">Seattle, WA</option>
+        </select-->
+        </div>
+        <div class="dialog-buttons">
+            <button id="butAddEvent" class="button">Enviar sugerencia</button>
+            <button id="butAddCancel" class="button">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<div class="loader">
+    <svg viewBox="0 0 32 32" width="32" height="32">
+        <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+    </svg>
+</div>
+
+<!--script src="../scripts/app_event.js" async></script-->
+
+<!------- template --->
+<!-- JavaScript Libraries -->
+<script src="../template/lib/jquery/jquery.min.js"></script>
+<script src="../template/lib/jquery/jquery-migrate.min.js"></script>
+<script src="../template/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../template/lib/easing/easing.min.js"></script>
+<script src="../template/lib/superfish/hoverIntent.js"></script>
+<script src="../template/lib/superfish/superfish.min.js"></script>
+<script src="../template/lib/wow/wow.min.js"></script>
+<script src="../template/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="../template/lib/magnific-popup/magnific-popup.min.js"></script>
+<script src="../template/lib/sticky/sticky.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script>
+<!-- Contact Form JavaScript File -->
+<script src="../template/contactform/contactform.js"></script>
+
+<!-- Template Main Javascript File -->
+<script src="../template/js/main.js"></script>
+
+<script src="../scripts/functions.js"></script>
+
+</body>
+</html>

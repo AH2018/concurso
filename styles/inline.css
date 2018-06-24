@@ -57,8 +57,23 @@ body {
       -ms-flex-line-pack: stretch;
           align-content: stretch;
   background: #ececec; }
+.btn-projects{
+    background: #50d8af;
+    border: 2px solid #50d8af;
 
-.header {
+    font-family: "Raleway", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 32px;
+    border-radius: 2px;
+    transition: 0.5s;
+    margin: 10px;
+    color: #fff;
+}
+/*.header {
   width: 100%;
   height: 56px;
   color: #FFF;
@@ -107,7 +122,8 @@ body {
     transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
     border: none;
     outline: none;
-    cursor: pointer; }
+    cursor: pointer; }*/
+
   .header #butRefresh {
     background: url(/images/ic_refresh_white_24px.svg) center center no-repeat; }
   .header #butAdd {
@@ -243,15 +259,30 @@ body {
   float: right; }
 
 .card {
+    background: url("../template/img/intro-carousel/1.jpg") no-repeat;
+    background-size: cover;
   padding: 16px;
   position: relative;
   box-sizing: border-box;
-  background: #fff;
   border-radius: 2px;
   margin: 16px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
 
-.weather-forecast .location {
+.circle-button{
+    border-radius: 100% ;
+    height: 1.75em;
+    width: 1.75em;
+    background: #50d8af;
+    border: 2px solid #50d8af;
+    align-self: flex-end;
+
+    font-family: "Raleway", sans-serif;
+    color: #ffffff;
+
+}
+
+.weather-forecast .event {
   font-size: 1.75em; }
 
 .weather-forecast .date, .weather-forecast .description {
