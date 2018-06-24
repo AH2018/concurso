@@ -24,6 +24,10 @@ $(document).ready(function(){
 
 });
 
+function cargar_detalles(data){
+
+}
+
 function cargar_info_personal(){
     console.log("profile");
     $.post(

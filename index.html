@@ -1,172 +1,268 @@
-<!--
- Copyright 2016 Google Inc.
- 
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
- 
-      http://www.apache.org/licenses/LICENSE-2.0
- 
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
--->
-
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather PWA</title>
-  <link rel="stylesheet" type="text/css" href="styles/inline.css">
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Todo Cambiar el título del sistema -->
+    <title>Sistema de apoyo a Activistas</title>
+    <link rel="stylesheet" type="text/css" href="styles/inline.css">
 
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                template
+         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!-- Favicons -->
+    <link href="template/img/favicon.png" rel="icon">
+    <link href="template/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="template/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="template/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="template/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="template/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="template/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="template/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="template/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="template/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+      Theme Name: Reveal
+      Theme URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
+      Author: BootstrapMade.com
+      License: https://bootstrapmade.com/license/
+    ======================================================= -->
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                template
+         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 </head>
 <body>
 
-  <header class="header">
-    <h1 class="header__title">Weather PWA</h1>
-    <button id="butRefresh" class="headerButton" aria-label="Refresh"></button>
-    <button id="butAdd" class="headerButton" aria-label="Add"></button>
-  </header>
+<!--==========================
+  Header
+============================-->
+<header id="header">
+    <div class="container" >
 
-  <main class="main">
-      <a href="pages/events.html">
-          <button>Holi </button>
-      </a>
+        <div id="logo" class="pull-left" >
+            <h1 style="color: #ffffff"><img src="images/logo.png" alt="..." class="img-thumbnail" height="20%" width="10%">  4aCause</h1>
+        </div>
 
-      <div class="card cardTemplate weather-forecast" hidden>
-      <div class="city-key" hidden></div>
-      <div class="card-last-updated" hidden></div>
-      <div class="location"></div>
-      <div class="date"></div>
-      <div class="description"></div>
-      <div class="current">
-        <div class="visual">
-          <div class="icon"></div>
-          <div class="temperature">
-            <span class="value"></span><span class="scale">°F</span>
-          </div>
-        </div>
-        <div class="description">
-          <div class="humidity"></div>
-          <div class="wind">
-            <span class="value"></span>
-            <span class="scale">mph</span>
-            <span class="direction"></span>°
-          </div>
-          <div class="sunrise"></div>
-          <div class="sunset"></div>
-        </div>
-      </div>
-      <div class="future">
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-      </div>
     </div>
-  </main>
+</header><!-- #header -->
+<!--header class="header">
 
-  <div class="dialog-container">
-    <div class="dialog">
-      <div class="dialog-title">Add new city</div>
-      <div class="dialog-body">
-        <select id="selectCityToAdd">
-          <!-- Values map to Yahoo Weather API Where On Earth Identifiers (WOEIDs).
-               https://developer.yahoo.com/weather/documentation.html#req -->
-          <option value="2357536">Austin, TX</option>
-          <option value="2367105">Boston, MA</option>
-          <option value="2379574">Chicago, IL</option>
-          <option value="2459115">New York, NY</option>
-          <option value="2475687">Portland, OR</option>
-          <option value="2487956">San Francisco, CA</option>
-          <option value="2490383">Seattle, WA</option>
-        </select>
-      </div>
-      <div class="dialog-buttons">
-        <button id="butAddCity" class="button">Add</button>
-        <button id="butAddCancel" class="button">Cancel</button>
-      </div>
+
+<!--==========================
+Intro Section
+============================-->
+
+<main class="main">
+    <!--==========================
+    Intro Section
+    ============================-->
+    <section id="intro">
+
+        <div class="intro-content">
+            <!--h2>Making <span>your ideas</span><br>happen!</h2-->
+            <div style="height: 80%">
+                <img src="images/logo.png" alt="..." class="img-thumbnail" height="100%" style="max-height:100%">
+            </div>
+            <div>
+                <a href="join_us.html" class="btn-get-started scrollto">Súmate</a>
+                <a href="events.html" class="btn-projects scrollto">Nuestras causas</a>
+            </div>
+        </div>
+
+        <div id="intro-carousel" class="owl-carousel">
+            <div class="item" style="background-image: url('../images/logo.png');"></div>
+        </div>
+
+    </section><!-- #intro -->
+
+    <main id="main">
+
+        <!--==========================
+          About Section
+        ============================-->
+        <section id="about" class="wow fadeInUp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 about-img">
+                        <img src="images/new_.png" alt="">
+                    </div>
+
+                    <div class="col-lg-6 content">
+                        <h2>Juntos podemos lograr grandes cambios</h2>
+                        <h3>Porque somos muchas personas las queremos ser escuchadas ante los problemas que atentan con nuestros derechos fundamentales.</h3>
+
+                        <ul>
+                            <li><i class="ion-android-checkmark-circle"></i> Existen muchas personas que quieren ayudar pero no saben cómo.</li>
+                            <li><i class="ion-android-checkmark-circle"></i> Cada día alrededor del mundo se levantan --- de personas.</li>
+                            <li><i class="ion-android-checkmark-circle"></i> Al no estar organizados los grandes gobiernos lo consideran como pequeñas protestas aisladas.</li>
+                        </ul>
+
+                        <p>
+                            A lo largo de la historia hemos observados que cuando nos organizamos de manera eficiente podemos lograr transformaciones de conciencia y hasta de sistemas judiciales.
+                        </p>
+
+                        <h3>
+                            <b>Cada día comunidades dispersas se vuelven capaz de interactuar instantaneammente a escala global.</b>
+                            - Manifiesto Telecomunista
+                        </h3>
+
+                        <h4>¿Cómo funciona la plataforma?</h4>
+                        <p> </p>
+                        <ul>
+                            <li><i class="ion-android-checkmark-circle"></i> Puedes explorar dentro de los eventos que.</li>
+                            <li><i class="ion-android-checkmark-circle"></i> ------------------------</li>
+                            <li><i class="ion-android-checkmark-circle"></i> -----------------------------------.</li>
+                        </ul>
+
+                        <h3>Los seres humanos hemos demostrado que podemos romper fronteras políticas y geograficas.</h3>
+
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- #about -->
+
+
+
+
+
+        <!--==========================
+          Our Team Section
+        ============================-->
+        <section id="team" class="wow fadeInUp">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Team</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="member">
+                            <div class="pic"><img src="template/img/team-1.jpg" alt=""></div>
+                            <div class="details">
+                                <h4>Walter White</h4>
+                                <span>Chief Executive Officer</span>
+                                <div class="social">
+                                    <a href=""><i class="fa fa-twitter"></i></a>
+                                    <a href=""><i class="fa fa-facebook"></i></a>
+                                    <a href=""><i class="fa fa-google-plus"></i></a>
+                                    <a href=""><i class="fa fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="member">
+                            <div class="pic"><img src="template/img/team-2.jpg" alt=""></div>
+                            <div class="details">
+                                <h4>Sarah Jhinson</h4>
+                                <span>Product Manager</span>
+                                <div class="social">
+                                    <a href=""><i class="fa fa-twitter"></i></a>
+                                    <a href=""><i class="fa fa-facebook"></i></a>
+                                    <a href=""><i class="fa fa-google-plus"></i></a>
+                                    <a href=""><i class="fa fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="member">
+                            <div class="pic"><img src="template/img/team-3.jpg" alt=""></div>
+                            <div class="details">
+                                <h4>William Anderson</h4>
+                                <span>CTO</span>
+                                <div class="social">
+                                    <a href=""><i class="fa fa-twitter"></i></a>
+                                    <a href=""><i class="fa fa-facebook"></i></a>
+                                    <a href=""><i class="fa fa-google-plus"></i></a>
+                                    <a href=""><i class="fa fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="member">
+                            <div class="pic"><img src="template/img/team-4.jpg" alt=""></div>
+                            <div class="details">
+                                <h4>Amanda Jepson</h4>
+                                <span>Accountant</span>
+                                <div class="social">
+                                    <a href=""><i class="fa fa-twitter"></i></a>
+                                    <a href=""><i class="fa fa-facebook"></i></a>
+                                    <a href=""><i class="fa fa-google-plus"></i></a>
+                                    <a href=""><i class="fa fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- #team -->
+
+
+
+    </main>
+
+    <div class="dialog-container">
+        <div class="dialog">
+            <div class="dialog-title">Sugerir un evento</div>
+            <div class="dialog-body">
+                <label>Título de la causa</label>
+                <input type="text" id="title_event">
+                <label>Descripción</label>
+                <input type="text" id="description_event">
+            </div>
+            <div class="dialog-buttons">
+                <button id="butAddEvent" class="button">Enviar sugerencia</button>
+                <button id="butAddCancel" class="button">Cancelar</button>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div class="loader">
-    <svg viewBox="0 0 32 32" width="32" height="32">
-      <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
-    </svg>
-  </div>
+    <div class="loader">
+        <svg viewBox="0 0 32 32" width="32" height="32">
+            <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+        </svg>
+    </div>
 
-  <script src="scripts/app.js" async></script>
+    <!--script src="scripts/app_event.js" async></script-->
+
+    <!------- template --->
+    <!-- JavaScript Libraries -->
+    <script src="template/lib/jquery/jquery.min.js"></script>
+    <script src="template/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="template/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="template/lib/easing/easing.min.js"></script>
+    <script src="template/lib/superfish/hoverIntent.js"></script>
+    <script src="template/lib/superfish/superfish.min.js"></script>
+    <script src="template/lib/wow/wow.min.js"></script>
+    <script src="template/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="template/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="template/lib/sticky/sticky.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="template/contactform/contactform.js"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="template/js/main.js"></script>
+
+    <script src="scripts/functions.js"></script>
 
 </body>
 </html>
