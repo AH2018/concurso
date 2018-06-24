@@ -6,7 +6,7 @@
     <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Todo Cambiar el título del sistema -->
-    <title>Sistema de apoyo a Activistas</title>
+    <title>4aCause</title>
     <link rel="stylesheet" type="text/css" href="../styles/inline.css">
 
     <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -43,7 +43,7 @@
                 template
          +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 </head>
-<body>
+<body onload="cargar_evento_detalle()">
 
 <!--==========================
   Header
@@ -57,28 +57,35 @@
 
         <nav id="nav-menu-container">
             <ul class="nav-menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a class="profile">Perfil</a></li>
-                <li><a href="my_events.html">Mis eventos</a></li>
-                <li class="menu-active"><a href="events.html">Eventos</a></li>
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li>
+                    <a class="profile">Perfil</a>
+                </li>
+                <li>
+                    <a href="my_events.html">Mis eventos</a>
+                </li>
+                <li class="menu-active">
+                    <a href="events.html">Eventos</a>
+                </li>
             </ul>
         </nav><!-- #nav-menu-container -->
     </div>
-</header><!-- #header -->
-
-<!--==========================
-Intro Section
-============================-->
+</header>
 
 <main class="main">
     <div id="details">
-        <h2 id="title">Nombre del eventooooo</h2>
-        <h2> Datos: </h2>
-        <div id="description">DEeeeeeeeeeescription</div>
-        <h3>Organizaciones apoyando</h3>
-        <h3>Numero de participantes</h3>
-        <h3> Actividades</h3>
-
+        <b><label>Causa: </label></b>
+        <label id="title"></label>
+        <b><label>Numero de participantes: </label></b>
+        <div id="participant_number"></div>
+        <b><label>Organizaciones apoyando</label></b>
+        <label id="oganizations"></label>
+        <b><label> Actividades</label></b>
+        <div id="activities"></div>
+        <b><label>Descripción: </label></b>
+        <div id="description"></div>
     </div>
 
     <a class="btn-projects scrollto headerButton" id="butJoin">Unirse</a>
